@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
-import ProductPage from "./Pages/ProductPage";
+import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import LoginSignUp from "./Pages/LoginSignUp";
 import second from "./Components/Footer/Footer";
@@ -31,8 +31,9 @@ export default function App() {
             path="/kids"
             element={<ShopCategory banner={kid_banner} category="kid" />}
           />
-          <Route path="product" element={<ProductPage />} />
-          <Route path=":productId" element={<ProductPage />} />
+          <Route path="/product" element={<Product />}>
+            <Route path=":productId" element={<Product />} />
+          </Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/Login" element={<LoginSignUp />} />
         </Routes>
